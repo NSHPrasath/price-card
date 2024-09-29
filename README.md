@@ -7,4 +7,3 @@ Javascript
 Bootstrap
 React
 
-React-Price-Card-Task
