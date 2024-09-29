@@ -1,35 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Card from './components/Card'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  let data = [{
+    sub:"Free",
+    dollor:"$0",
+    month:"/month",
+    user:"Single User",
+    isUser:true,
+    storage:"5GB Storage",
+    isStorage:true,
+    public:"Unlimited Public Projects",
+    isPublic:true,
+    access:"Community Access",
+    isAccess:true,
+    private:"Unlimited Private Projects",
+    isPrivate:false,
+    support:"Dedicated Phone Support",
+    isSupport:false,
+    Subdomain:"Free Subdomain",
+    isSubdomain:false,
+    reports:"Monthly Status Reports",
+    isReports:false
+  },
+  {
+    sub:"Plus",
+    dollor:"$9",
+    month:"/month",
+    user:"5 Users",
+    isUser:true,
+    storage:"50GB Storage",
+    isStorage:true,
+    public:"Unlimited Public Projects",
+    isPublic:true,
+    access:"Community Access",
+    isAccess:true,
+    private:"Unlimited Private Projects",
+    isPrivate:true,
+    support:"Dedicated Phone Support",
+    isSupport:true,
+    Subdomain:"Free Subdomain",
+    isSubdomain:true,
+    reports:"Monthly Status Reports",
+    isReports:false
+  },
+  {
+    sub:"Pro",
+    dollor:"$49",
+    month:"/month",
+    user:"Unlimited Users",
+    isUser:true,
+    storage:"150GB Storage",
+    isStorage:true,
+    public:"Unlimited Public Projects",
+    isPublic:true,
+    access:"Community Access",
+    isAccess:true,
+    private:"Unlimited Private Projects",
+    isPrivate:true,
+    support:"Dedicated Phone Support",
+    isSupport:true,
+    Subdomain:"Free Subdomain",
+    isSubdomain:true,
+    reports:"Monthly Status Reports",
+    isReports:true
+  }]
+  return <>
+  <section className="pricing py-5">
+  <div className="container">
+    <div className="row">
+      {
+        data.map((e,i)=>{
+          return (
+            <Card cardData={e} key={i}/>
+          )
+        })
+      }
+    </div>
+  </div>
+</section>
+  </>
 }
 
 export default App
